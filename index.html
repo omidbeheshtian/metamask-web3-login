@@ -1,18 +1,20 @@
 <html lang="en">
 
 <head>
+    <title>Metamask WEB3 Login</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="scripts.js"></script>
-    <title>Metamask WEB3 Login</title>
+    <script src="scripts.js" defer></script>
+    <!-- MetaMask's Detection Library To Detect Provider -->
+    <script src="https://cdn.jsdelivr.net/npm/@metamask/detect-provider"></script>
 </head>
 
 <body class="flex w-screen h-screen justify-center items-center">
     <div class="flex-col space-y-2 justify-center items-center">
         <h1>Omid Beheshtian</h1>
-        <button id="login" class="mx-auto rounded-md p-2 bg-purple-500 text-white" onclick="">Click to Login!</button>
-        <p id='Wallet' class='text-lg text-gray-600 my-2'></p>
+        <button id="loginButton" class="mx-auto rounded-md p-2 bg-purple-500 text-white" onclick="">Click to Login!</button>
+        <p id="userWallet" class="text-lg text-gray-600 my-2"></p>
     </div>
 </body>
 
