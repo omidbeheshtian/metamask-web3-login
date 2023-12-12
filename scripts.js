@@ -5,7 +5,7 @@ const INSTALL_METAMASK_MESSAGE = 'MetaMask is not installed';
 const LOGIN_BUTTON_TEXT = 'Click to Login';
 const LOGOUT_BUTTON_TEXT = 'Sign out of MetaMask';
 
-
+// Check MetaMask 
 function toggleButton() {
     if (!window.ethereum || !window.ethereum.isMetaMask) {
         console.log('MetaMask not found.');
@@ -44,6 +44,7 @@ async function loginWithMetaMask() {
     }
 }
 
+// SignOut function
 function signOutOfMetaMask() {
     window.userWalletAddress = null;
     userWallet.innerText = '';
@@ -55,12 +56,20 @@ function signOutOfMetaMask() {
     }, 200);
 }
 
+// Check twice for debugging but we can use:
+// window.addEventListener('DOMContentLoaded', () => {
+//     toggleButton()
+//   });
+// instead of this code: (That`s Optional)
+
 window.addEventListener('DOMContentLoaded', async() => {
     const provider = await detectEthereumProvider();
     if (provider) {
+        // everything is fine!
         window.ethereum = provider;
         toggleButton();
     } else {
+        // if 'window.ethereum' returns undefined
         console.log('MetaMask not found Omid Beheshtian!');
         loginButton.innerText = INSTALL_METAMASK_MESSAGE;
         loginButton.classList.remove('bg-purple-500', 'text-white');
